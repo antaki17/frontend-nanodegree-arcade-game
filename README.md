@@ -1,6 +1,7 @@
-frontend-nanodegree-arcade-game
-===============================
+You must help the player to move at river .
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+You can use the left,right,down and up arrow in keyboard.
 
-for self-checking their submission.
+Take carefull of enemys, they can eat you !!
+
+HAVE FUN!
