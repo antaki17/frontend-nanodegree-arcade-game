@@ -27,7 +27,7 @@ var Enemy = function() {
 Enemy.prototype.reset = function() {
     this.x = positionx;
     this.y = enemyPositions[getRandomInt(enemyPositions.length)];
-    this.speed = Math.random() * 300 + 10;
+    this.speed = Math.random() * 200 + 10;
 };
 
 //Update the enemy's position
@@ -41,11 +41,6 @@ Enemy.prototype.update = function(dt) {
     if ((Math.abs(this.x - Player.x) < 80) && (Math.abs(this.y - Player.y) < 60)) {
         Player.reset();
     }
-    //Enemy  perimeter  collision detection
-    this.left = this.x;
-    this.top = this.y;
-    this.right = this.x + 75;
-    this.bottom = this.y + 75;
 
     this.collisionsCheck(this, player);
 };
@@ -57,6 +52,12 @@ Enemy.prototype.render = function() {
 
 //Collision check
 Enemy.prototype.collision = function(enemy, player) {
+        //Enemy  perimeter  collision detection
+    this.left = this.x;
+    this.top = this.y;
+    this.right = this.x + 75;
+    this.bottom = this.y + 75;
+    
     return !(player.left > enemy.right ||
         player.right < enemy.left ||
         player.top > enemy.bottom ||
@@ -71,7 +72,6 @@ Enemy.prototype.collisionsCheck = function(enemy, player) {
 //Player class
 var Player = function() {
     this.sprite = 'images/char-boy.png';
-    this.reset();
 };
 
 Player.prototype.reset = function() {
